@@ -13,11 +13,15 @@
 <script>
     const OPTIONS = ["Rock", "Paper", "Scissors"];
 
+    /* 
+        Function Name: getComputerChoice
+        This function randomly chooses either "Rock", "Paper", or "Scissors"
+    */
     function getComputerChoice() {
         // Generate random number within length of OPTIONS array
         let rand_num  = Math.floor(Math.random() * OPTIONS.length);
 
-        //Print to random option to console log
+        // Print to random option to console log
         console.log(OPTIONS[rand_num]);
     }
     getComputerChoice();
