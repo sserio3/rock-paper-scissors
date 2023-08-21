@@ -21,4 +21,39 @@
         console.log(OPTIONS[rand_num]);
     }
     getComputerChoice();
+
+
+    /*
+    Function Name: playRound
+    Things function plays a single round of Rock Paper Scissors. 
+    The function should take two parameters - the playerSelection and 
+    computerSelection - and then return a string that declares the winner 
+    of the round like so: "You Lose! Paper beats Rock" 
+    */
+   function playRound(playerSelection, computerSelection) {
+        // Paper beats rock responses
+        if (playerSelection.toLowerCase() === "rock" && computerSelection === "Paper") {
+            return "You Lose! Paper beats Rock";
+        }
+        else if (playerSelection.toLowerCase() === "paper" && computerSelection == "Rock") {
+            return "You Win! Paper beat Rock";
+        }
+        // Scissors beat paper responses
+        else if (playerSelection.toLowerCase() === "paper" && computerSelection == "Scissors") {
+            return "You Lose! Scissors beat Paper";
+        }
+        else if (playerSelection.toLowerCase() === "scissors" && computerSelection == "Paper") {
+            return "You Win! Scissors beat Paper";
+        }
+        // Rock beats scissors response
+        else if (playerSelection.toLowerCase() === "scissors" && computerSelection == "Rock") {
+            return "You Lose! Rock beat Scissors";
+        }
+        else if (playerSelection.toLowerCase() === "rock" && computerSelection == "Scissors") {
+            return "You Win! Rock beat Scissors";
+        }
+        else {
+            return "It's a draw... You both chose the same thing"
+        }
+   }
 </script>
