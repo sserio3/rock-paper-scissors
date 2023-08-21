@@ -11,7 +11,7 @@
 </html>
 
 <script>
-    const OPTIONS = ["Rock", "Paper", "Scissors"];
+    const OPTIONS = ["rock", "paper", "scissors"];
 
 
     /* 
@@ -35,32 +35,33 @@
     of the round like so: "You Lose! Paper beats Rock" 
     */
    function playRound(playerSelection, computerSelection) {
+        let lowerPlayerSelection = playerSelection.toLowerCase();
         // Paper beats rock responses
-        if (playerSelection.toLowerCase() === "rock" && computerSelection === "Paper") {
+        if (lowerPlayerSelection === "rock" && computerSelection === "Paper") {
             return "You Lose! Paper beats Rock";
         }
-        else if (playerSelection.toLowerCase() === "paper" && computerSelection == "Rock") {
+        else if (lowerPlayerSelection === "paper" && computerSelection == "Rock") {
             return "You Win! Paper beat Rock";
         }
 
         // Scissors beat paper responses
-        else if (playerSelection.toLowerCase() === "paper" && computerSelection == "Scissors") {
+        else if (lowerPlayerSelection === "paper" && computerSelection == "Scissors") {
             return "You Lose! Scissors beat Paper";
         }
-        else if (playerSelection.toLowerCase() === "scissors" && computerSelection == "Paper") {
+        else if (lowerPlayerSelection === "scissors" && computerSelection == "Paper") {
             return "You Win! Scissors beat Paper";
         }
 
         // Rock beats scissors response
-        else if (playerSelection.toLowerCase() === "scissors" && computerSelection == "Rock") {
+        else if (lowerPlayerSelection === "scissors" && computerSelection == "Rock") {
             return "You Lose! Rock beat Scissors";
         }
-        else if (playerSelection.toLowerCase() === "rock" && computerSelection == "Scissors") {
+        else if (lowerPlayerSelection === "rock" && computerSelection == "Scissors") {
             return "You Win! Rock beat Scissors";
         }
 
         // Response for invalid input
-        else if (!(playerSelection in OPTIONS)) {
+        else if (!(lowerPlayerSelection in OPTIONS)) {
             return "Sorry, that was not a valid choice. Try again next round"
         }
 
