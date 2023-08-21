@@ -60,14 +60,14 @@
             return "You Win! Rock beat Scissors";
         }
 
-        // Response for invalid input
-        else if (!(lowerPlayerSelection in OPTIONS)) {
-            return "Sorry, that was not a valid choice. Try again next round"
+        // Same choice/draw response
+        else if (playerSelection === computerSelection) {
+            return `It's a draw... You both chose ${computerSelection}`
         }
 
-        // Same choice/draw response
+        // Response for invalid input
         else {
-            return `It's a draw... You both chose ${computerSelection}`
+            return "Sorry, that was not a valid choice. Try again next round"
         }
    }
 
