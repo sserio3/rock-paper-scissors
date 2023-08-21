@@ -71,6 +71,15 @@
     This function contains the framework for playing 5 rounds of Rock, Paper, Scissors
    */
    function game() {
-        
+        // Create loop to play 5 rounds
+        for (i = 0; i < 5; i++) {
+            // Prompt user for selection of rock, paper, or scissors
+            let userInput = prompt("Rock, Paper, or Scissors?", "");
+
+            // Print result of playRound to console with user input and getComputerChoice as arguments
+            console.log(playRound(userInput, getComputerChoice()));
+        }
    }
+
+   game();
 </script>
