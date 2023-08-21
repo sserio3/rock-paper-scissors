@@ -42,6 +42,7 @@
         else if (playerSelection.toLowerCase() === "paper" && computerSelection == "Rock") {
             return "You Win! Paper beat Rock";
         }
+
         // Scissors beat paper responses
         else if (playerSelection.toLowerCase() === "paper" && computerSelection == "Scissors") {
             return "You Lose! Scissors beat Paper";
@@ -49,6 +50,7 @@
         else if (playerSelection.toLowerCase() === "scissors" && computerSelection == "Paper") {
             return "You Win! Scissors beat Paper";
         }
+
         // Rock beats scissors response
         else if (playerSelection.toLowerCase() === "scissors" && computerSelection == "Rock") {
             return "You Lose! Rock beat Scissors";
@@ -56,8 +58,10 @@
         else if (playerSelection.toLowerCase() === "rock" && computerSelection == "Scissors") {
             return "You Win! Rock beat Scissors";
         }
+        
+        // Same choice/draw response
         else {
-            return "It's a draw... You both chose the same thing"
+            return `It's a draw... You both chose ${computerSelection}`
         }
    }
 </script>
