@@ -61,13 +61,13 @@
         }
 
         // Same choice/draw response
-        else if (lowerPlayerSelection === computerSelection) {
-            return `It's a draw... You both chose ${computerSelection}`
+        else if (lowerPlayerSelection === computerSelection.toLowerCase()) {
+            return `It's a draw... You both chose ${computerSelection}`;
         }
 
         // Response for invalid input
         else {
-            return "Sorry, that was not a valid choice. Try again next round"
+            return "Sorry, that was not a valid choice. Try again next round";
         }
    }
 
