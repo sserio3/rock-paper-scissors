@@ -37,6 +37,35 @@ function getHumanChoice() {
 }
 
 
+/**
+ * Plays a round of rock-paper-scissors and determines the winner based on user and computer choices.
+ * @param {string} humanChoice - The human user's choice (rock, paper, or scissors).
+ * @param {string} computerChoice - The computer's choice (rock, paper, or scissors).
+ */
+function playRound(humanChoice, computerChoice) {
+    // Check if choices match for a tie
+    if (humanChoice === computerChoice) {
+        console.log("Nobody wins. It's a tie!"); // Log a tie message
+    }
+    // Check if human user's choice beats computer's choice
+    else if (
+        (humanChoice === "paper" && computerChoice === "rock") ||
+        (humanChoice === "rock" && computerChoice === "scissors") ||
+        (humanChoice === "scissors" && computerChoice === "paper")
+    ) {
+        let winningChoice = humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1); // Capitalize the first letter of the winning choice
+        console.log(`You win! ${winningChoice} beats ${computerChoice}.`); // Log a win message
+        humanScore++; // Increment human score
+    } else {
+        let winningChoice = computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1); // Capitalize the first letter of the winning choice
+
+        console.log(`You lose! ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}.`); // Log a lose message
+        computerScore++; // Increment computer score
+    }
+    return; // Exit the function
+}
+
+
 // Test 1: Check if the getComputerChoice function returns a valid choice
 const computerChoice = getComputerChoice();
 console.log(computerChoice);
@@ -61,4 +90,62 @@ if (!humanChoice) {
     console.log("TEST FAILED: No input found.");
     } else {
     console.log("TEST PASSED: Input found.");
+}
+
+
+// Test 3: Check if the playRound function updates scores correctly for player win with hardcoded values
+const humanSelectionWin = "scissors";  // Hardcoded human user's winning choice
+const computerSelectionWin = "paper";  // Hardcoded computer's losing choice
+
+// Play a round with the selections given
+playRound(humanSelectionWin, computerSelectionWin);
+
+// Check if the scores are updated correctly
+if (humanScore > 0 && computerScore == 0) {
+    console.log("TEST PASSED: Scores for human win updated correctly.");
+}
+else {
+    console.log("TEST FAILED: Scores for human win not updated correctly.");
+}
+
+
+// Test 4: Check if the playRound function updates scores correctly for computer win with hardcoded values
+
+// Reset scores to 0 for test
+humanScore = 0;
+computerScore = 0;
+
+const humanSelectionLose = "scissors";  // Hardcoded human user's losing choice
+const computerSelectionLose = "rock";  // Hardcoded computer's winning choice
+
+// Play a round with the selections given
+playRound(humanSelectionLose, computerSelectionLose);
+
+// Check if the scores are updated correctly
+if (humanScore == 0 && computerScore > 0) {
+    console.log("TEST PASSED: Scores for computer win updated correctly.");
+}   
+else {
+    console.log("TEST FAILED: Scores for computer win not updated correctly.");
+}
+
+
+// Test 5: Check if the playRound function handles ties correctly
+
+// Reset scores to 0 for test
+humanScore = 0;
+computerScore = 0;
+
+const humanSelectionTie = "rock";  // Hardcoded human user's choice
+const computerSelectionTie = "rock";  // Hardcoded computer's choice
+
+// Play a round with the selections given
+playRound(humanSelectionTie, computerSelectionTie);
+
+// Check if the scores are updated correctly
+if (humanScore == 0 && computerScore == 0) {
+    console.log("TEST PASSED: Scores for tie not updated correctly.");
+}
+else {
+    console.log("TEST FAILED: Scores for tie not updated correctly.");
 }
