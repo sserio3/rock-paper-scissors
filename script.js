@@ -1,3 +1,8 @@
+// Global variables
+let humanScore = 0; // Initialize human user's score
+let computerScore = 0; // Initialize computer's score
+
+
 /**
  * Randomly selects rock, paper, or scissors for the computer.
  * @returns {string} The computer's choice (rock, paper, or scissors).
