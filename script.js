@@ -19,8 +19,21 @@ function getComputerChoice() {
     }
 }
 
-// Test: Check if the getComputerChoice function returns a valid choice
-const computerChoice = getComputerChoice()
+
+/**
+ * Gets the user's choice from prompt (assume choice will be valid for now).
+ * @returns {string} The user's choice (rock, paper, or scissors).
+ */
+function getHumanChoice() {
+    // Prompt the user for their choice
+    let choice = prompt("Please choose rock, paper, or scissors:").toLowerCase();
+
+    return choice; // Return the user's choice
+}
+
+
+// Test 1: Check if the getComputerChoice function returns a valid choice
+const computerChoice = getComputerChoice();
 console.log(computerChoice);
 
 // Validate the result
@@ -28,4 +41,19 @@ if (["rock", "paper", "scissors"].includes(computerChoice)) {
   console.log("TEST PASSED: Valid output.");
 } else {
   console.log("TEST FAILED: Invalid output.");
+}
+
+
+// Test 2: Check if the getHumanChoice function returns the user's choice (assume valid input)
+// Note: Will change to validate input in the future
+
+// Get the user's choice
+const humanChoice = getHumanChoice();
+console.log(humanChoice); 
+
+// Check for input
+if (!humanChoice) {
+    console.log("TEST FAILED: No input found.");
+    } else {
+    console.log("TEST PASSED: Input found.");
 }
