@@ -65,7 +65,7 @@ function playGame() {
         } else {
             let winningChoice = computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1); // Capitalize the first letter of the winning choice
 
-            console.log(`You lose! ${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}.`); // Log a lose message
+            console.log(`You lose! ${winningChoice} beats ${humanChoice}.`); // Log a lose message
             computerScore++; // Increment computer score
         }
         return; // Exit the function
